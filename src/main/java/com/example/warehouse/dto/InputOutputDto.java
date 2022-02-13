@@ -34,7 +34,7 @@ public class InputOutputDto {
         private Long productId;
         private Double amount;
         private Double price;
-        private LocalDate expiredDate;
+        private LocalDateTime expiredDate;
     }
 
     @Data

@@ -48,7 +48,7 @@ public class AttachmentController {
                 attachment.getName(),
                 toSystem
         );
-        return new Response(true, "File Uploaded", attachData);
+        return new Response(true, "File Uploaded", attachData, HttpStatus.CREATED);
     }
 
 

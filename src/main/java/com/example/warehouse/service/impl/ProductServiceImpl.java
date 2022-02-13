@@ -50,7 +50,8 @@ public class ProductServiceImpl implements ProductService {
                 categoryRepository.findById(dto.getCategoryId()).orElseThrow(() -> new NotFoundException("Not Found Category ID")),
                 measurementRepository.findById(dto.getMeasurementId()).orElseThrow(() -> new NotFoundException("Not Found Measurement ID")),
                 attachmentList,
-                UUID.randomUUID());
+                UUID.randomUUID()
+        );
 
         return productRepository.save(product);
     }
