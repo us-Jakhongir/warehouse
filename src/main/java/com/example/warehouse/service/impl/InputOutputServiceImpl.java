@@ -9,6 +9,7 @@ import com.example.warehouse.repository.*;
 import com.example.warehouse.rest.response.Response;
 import com.example.warehouse.service.InputOutputService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -50,7 +51,7 @@ public class InputOutputServiceImpl implements InputOutputService {
         else
             message = "Output";
 
-        return new Response(true, message + " Saved!", saveInputOutput);
+        return new Response(true, message + " Saved!", saveInputOutput, HttpStatus.CREATED);
     }
 
     @Override
@@ -73,6 +74,6 @@ public class InputOutputServiceImpl implements InputOutputService {
             inputOutputProductRepository.saveAll(setProducts);
 
 
-        return new Response(true, "Success");
+        return new Response(true, "Success", HttpStatus.CREATED);
     }
 }

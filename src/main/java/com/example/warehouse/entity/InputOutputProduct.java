@@ -34,7 +34,7 @@ public class InputOutputProduct extends AbsEntity {
     private Double price;
 
     @Column(nullable = false)
-    private LocalDate expiredDate;
+    private LocalDateTime expiredDate;
 
 
 }

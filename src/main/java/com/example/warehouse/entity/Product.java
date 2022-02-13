@@ -31,9 +31,16 @@ public class Product extends AbsEntity {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Attachment> attachments = new ArrayList<>();
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private UUID code;
 
+    private Integer expirePeriod;
 
-
+    public Product(String name, Category category, Measurement measurement, List<Attachment> attachments, UUID code) {
+        this.name = name;
+        this.category = category;
+        this.measurement = measurement;
+        this.attachments = attachments;
+        this.code = code;
+    }
 }
